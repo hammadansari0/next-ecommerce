@@ -21,7 +21,7 @@ export const syncUserCreation = inngest.createFunction(
             name: first_name + " " + last_name,
             imageUrl: image_url
         }
-        console.log("Syncing User Creation:", event);
+        console.log("Syncing User Creation:", userData);
         await connectDB()
         await User.create(userData)
         console.log("Syncing User Creation done");
@@ -46,7 +46,7 @@ export const syncUserUpdation = inngest.createFunction(
             name: first_name + " " + last_name,
             imageUrl: image_url
         }
-        console.log("Syncing User Updation:", event);
+        console.log("Syncing User Updation:", userData);
         await connectDB()
         await User.findByIdAndUpdate(id,userData)
         console.log("Syncing User Updation done");
