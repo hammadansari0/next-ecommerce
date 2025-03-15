@@ -21,8 +21,10 @@ export const syncUserCreation = inngest.createFunction(
             name: first_name + " " + last_name,
             imageUrl: image_url
         }
+        console.log("Syncing User Creation:", event);
         await connectDB()
         await User.create(userData)
+        console.log("Syncing User Creation done");
         return { success: true };
     }
 )
@@ -44,8 +46,10 @@ export const syncUserUpdation = inngest.createFunction(
             name: first_name + " " + last_name,
             imageUrl: image_url
         }
+        console.log("Syncing User Updation:", event);
         await connectDB()
         await User.findByIdAndUpdate(id,userData)
+        console.log("Syncing User Updation done");
         return { success: true };
     }
 )
@@ -60,9 +64,10 @@ export const syncUserDeletion = inngest.createFunction(
     },
     async ({event})=>{
         const {id} = event.data
-
+        console.log("Syncing User Deletion:", event);
         await connectDB()
         await User.findByIdAndDelete(id)
+        console.log("Syncing User Deletion done");
         return { success: true };
     }
 )
