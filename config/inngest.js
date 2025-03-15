@@ -23,7 +23,7 @@ export const syncUserCreation = inngest.createFunction(
         }
         await connectDB()
         await User.create(userData)
-
+        return { success: true };
     }
 )
 
@@ -46,6 +46,7 @@ export const syncUserUpdation = inngest.createFunction(
         }
         await connectDB()
         await User.findByIdAndUpdate(id,userData)
+        return { success: true };
     }
 )
 
@@ -62,5 +63,6 @@ export const syncUserDeletion = inngest.createFunction(
 
         await connectDB()
         await User.findByIdAndDelete(id)
+        return { success: true };
     }
 )
