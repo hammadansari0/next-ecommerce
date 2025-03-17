@@ -28,7 +28,7 @@ export async function POST(request) {
             name: 'order/created',
             data: {
                 userId,
-                address: address._id.toString(),
+                address,
                 items,
                 amount: totalAmount,
                 date: Date.now(),
