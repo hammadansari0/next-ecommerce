@@ -60,6 +60,16 @@ const AboutUs = () => {
                         height={500} 
                         className="rounded-lg shadow-md w-full max-w-3xl object-cover"
                     />
+                    </div>
+                    <div className="mt-6 w-full flex justify-center">
+                        
+                    <Image 
+                        src="/group2.jpg" 
+                        alt="Team Group" 
+                        width={800} 
+                        height={500} 
+                        className="rounded-lg shadow-md w-full max-w-3xl object-cover"
+                    />
                 </div>
 
 
